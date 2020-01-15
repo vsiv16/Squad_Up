@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Squad_Up</string>
+    <string name="app_name">SquadUp</string>
+    <string name="speak_button">Speak</string>
+    <string name="next_button">Next</string>
+    <string name="low_button">Low Risk</string>
+    <string name="high_button">High Risk</string>
 </resources>
