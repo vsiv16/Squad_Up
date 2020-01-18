@@ -60,9 +60,10 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Need to speak");
                 try {
                     startActivityForResult(intent, REQ_CODE);
-                } catch (ActivityNotFoundException a) {
+                }
+                catch (ActivityNotFoundException a) {
                     Toast.makeText(getApplicationContext(),
-                            "Sorry your device not supported",
+                            "Sorry your device is not supported",
                             Toast.LENGTH_SHORT).show();
                 }
             }
@@ -107,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             case REQ_CODE: {
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    mWelcomeTextView.setText("hi");       // result.get(0));
+                    mWelcomeTextView.setText("" + result.get(0));       // result.get(0));
                 }
                 break;
             }
