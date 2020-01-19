@@ -2,9 +2,8 @@ package com.example.sivani.squad_up;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.media.MediaRecorder;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,12 +17,11 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     private TextView mWelcomeTextView;
     private Button mSpeakButton;
+    private Button mUpdateButton;
     private Button mNextButton;
-    private Button mLowButton;
-    private Button mHighButton;
-    private MediaRecorder fMediaRecorder;
-    static final int LOW = 1;
-    static final int HIGH = 2;
+    private String text;
+    static final int UPDATE = 1;
+    static final int RESULT = 2;
     private final int REQ_CODE = 100;
 
 
@@ -38,11 +36,8 @@ public class MainActivity extends AppCompatActivity {
         mSpeakButton = (Button) findViewById(R.id.speak_button);
         mSpeakButton.setText(R.string.speak_button);
 
-        mLowButton = (Button) findViewById(R.id.low_button);
-        mLowButton.setText(R.string.low_button);
-
-        mHighButton = (Button) findViewById(R.id.high_button);
-        mHighButton.setText(R.string.high_button);
+        mUpdateButton = (Button) findViewById(R.id.update_button);
+        mUpdateButton.setText(R.string.update_button);
 
         mNextButton = (Button) findViewById(R.id.next_button);
         mNextButton.setText(R.string.next_button);
@@ -66,38 +61,31 @@ public class MainActivity extends AppCompatActivity {
                             "Sorry your device is not supported",
                             Toast.LENGTH_SHORT).show();
                 }
-            }
-        });
-
-        mLowButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, LowActivity.class);
-                // send over the text data (put extra)
-                startActivityForResult(i, LOW);
-
-            }
-        });
-
-        mHighButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, HighActivity.class);
-                // send over the text data (put extra)
-                startActivityForResult(i, HIGH);
-
+                mUpdateButton.setEnabled(false);
+                mNextButton.setEnabled(true);
             }
         });
 
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, LowActivity.class);
-                // send over the text data (put extra)
-                // startActivityForResult(i, ACTION);
+                Intent i = new Intent(MainActivity.this, ResultActivity.class);
+                i.putExtra("TEXT", text);
+//                Toast.makeText(getApplicationContext(), "Location Sending", Toast.LENGTH_SHORT).show();
+                startActivityForResult(i, RESULT);
 
             }
         });
+
+        mUpdateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, UpdateActivity.class);
+                startActivityForResult(i, UPDATE);
+
+            }
+        });
+
 
     }
 
@@ -108,12 +96,12 @@ public class MainActivity extends AppCompatActivity {
             case REQ_CODE: {
                 if (resultCode == RESULT_OK && null != data) {
                     ArrayList result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                    mWelcomeTextView.setText("" + result.get(0));       // result.get(0));
+                    text = "" + result.get(0);
+                    mWelcomeTextView.setText("Code Received: " + result.get(0));       // result.get(0));
                 }
                 break;
             }
         }
-
 
     }
 }
