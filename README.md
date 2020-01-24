@@ -1,4 +1,6 @@
 # Squad_Up
+### Developed by: Sanjana Aithal, Ishani Pandya, Sivani Voruganti, Jeffrey Zang
+
 SquadUp is an Android app that is intended to be used in situations of emergency. We wanted people to feel safe and at peace, whether they be victims of abuse or students traveling alone at night on college campuses. Our app allows users to speak a discrete code which alerts and sends their location to contacts in their “squad.” 
 
 For more information, please visit:
