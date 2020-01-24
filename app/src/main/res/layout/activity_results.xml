@@ -3,16 +3,16 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#e0ccff"
+    android:background="#9703A9F4"
     android:gravity="center">
 
 
     <TextView
-        android:id = "@+id/low_text"
+        android:id = "@+id/result_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:textSize="15dp"
+        android:textSize="20dp"
         />
 
 

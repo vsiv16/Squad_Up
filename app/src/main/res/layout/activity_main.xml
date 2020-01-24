@@ -3,14 +3,14 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:background="#e0ccff"
+    android:background="#9703A9F4"
     android:gravity="center">
 
     <TextView
         android:id="@+id/welcome_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#6600ff"
+        android:textColor="#A94454AF"
         android:textSize="24dp"
         android:textStyle="bold"
         android:padding="24dp"/>
@@ -18,27 +18,29 @@
 
     <Button
         android:id="@+id/speak_button"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
+        android:background="#A94454AF"
+        android:layout_marginTop="10dp"
         android:padding="24dp"/>
 
     <Button
-        android:id="@+id/low_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/update_button"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
-        android:padding="24dp"/>
-
-    <Button
-        android:id="@+id/high_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:background="#A94454AF"
+        android:layout_marginTop="10dp"
         android:padding="24dp"/>
 
     <Button
         android:id="@+id/next_button"
-        android:layout_width="wrap_content"
+        android:layout_width="170dp"
         android:layout_height="wrap_content"
+        android:background="#A94454AF"
+        android:layout_marginTop="10dp"
         android:padding="24dp"/>
+
+
 
 
 </LinearLayout>

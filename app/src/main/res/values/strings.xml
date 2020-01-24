@@ -2,6 +2,6 @@
     <string name="app_name">SquadUp</string>
     <string name="speak_button">Speak</string>
     <string name="next_button">Next</string>
-    <string name="low_button">Low Risk</string>
-    <string name="high_button">High Risk</string>
+    <string name="update_button">Update Contacts</string>
+    <string name="AIzaSyAne7rYE83c8okLWkbgAt7L9r2oCb_sjI0">AIzaSyAne7rYE83c8okLWkbgAt7L9r2oCb_sjI0</string>
 </resources>
