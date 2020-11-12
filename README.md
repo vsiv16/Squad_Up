@@ -8,7 +8,7 @@ https://tinyurl.com/SquadUpInfo
 
 ## Version 1.0
  Default message is sent to contacts in the following form:
- > I feel unsafe, my location is: Latitude = xxxx Longitude = xxxx
+ > I feel unsafe, my location is: https://goo.gl/maps/locationhere
 * Currently the location is in DD coordinates but will be changed to an address link in Version 2.
 	
 ## Version 2.0 *(in progress)*
